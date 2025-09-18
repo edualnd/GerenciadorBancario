@@ -1,0 +1,47 @@
+.root {
+    -fx-laranja: #F86624;
+    -fx-verde: #0FFF95;
+    -fx-branco: #F4EDED;
+}
+
+/*Geral*/
+.pane{
+    -fx-background-color: #F86624;
+}
+.title{
+    -fx-font-weight: bold;
+    -fx-text-fill: #F4EDED;
+}
+.separator {
+    -fx-opacity: 0.4;
+}
+
+.opcoesBtn {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #F86624;
+    -fx-font-size: 14px;
+}
+
+/*Inicio*/
+.inicioBtn {
+    -fx-background-color: #d1571f;
+    -fx-border-radius: 20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #F4EDED;
+    -fx-font-size: 14px;
+}
+
+.inicioBtn:hover {
+    -fx-background-color: #b14a1b;
+    -fx-font-size: 14px;
+    -fx-text-fill: #e4e3e3;
+
+}
+/*Analise*/
+.tableColumn{
+    -fx-text-fill: black;
+    -fx-alignment: CENTER;
+    
+}

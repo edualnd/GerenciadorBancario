@@ -1,0 +1,3 @@
+1010,Juliana Martins,1000.0
+1010,Juliana Martins,3250.0FIXA
+1010,Juliana Martins,3000.0,FIXA

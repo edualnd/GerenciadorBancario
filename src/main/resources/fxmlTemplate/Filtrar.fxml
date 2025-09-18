@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ToggleButtonGroup layoutX="120.0" layoutY="40.0" selectionType="SINGLE">
+          <toggles>
+              <ToggleButton prefHeight="30.0" prefWidth="120.0" selected="true" style="-fx-font-weight: bold;" text="Saldo &gt; 10000" />
+            <ToggleButton prefHeight="30.0" prefWidth="120.0" style="-fx-font-weight: bold;" text="Contas pares" />
+              <ToggleButton prefHeight="30.0" prefWidth="120.0" style="-fx-font-weight: bold;" text="Saldo &gt; 5000" />
+          </toggles>
+      </ToggleButtonGroup>
+   </children>
+</Pane>
