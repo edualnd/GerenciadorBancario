@@ -24,7 +24,7 @@ public class CalcularPanel extends JPanel{
     private void initComponents(){
 
         JLabel titulo = new JLabel();
-        titulo.setText("Calcular Tarifa");
+        titulo.setText("Calcular main.bancaria.gui.panels.Tarifa");
         titulo.setFont(new Font("Arial", Font.BOLD, 24));
 
         setPreferredSize(new Dimension(500,400));
@@ -74,7 +74,7 @@ public class CalcularPanel extends JPanel{
         ContaService cs = new ContaService();
         ContaCorrente c =
                 dados.stream().filter(cc -> cc.getNumero() == num).toList().getFirst();
-        tarifa.setText("Tarifa: R$"+ cs.calcularTarifa(c));
+        tarifa.setText("main.bancaria.gui.panels.Tarifa: R$"+ cs.calcularTarifa(c));
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.WEST;

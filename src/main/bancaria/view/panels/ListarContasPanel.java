@@ -42,7 +42,7 @@ public class ListarContasPanel extends JPanel {
         for (ContaCorrente c: listaC){
             String num = String.format("%04d", c.getNumero());
             String dados =
-                    "Numero: " + num + "  //  Titular: " + c.getTitular() + "//  Saldo: R$" + c.getSaldo() + "//  Tarifa: " + c.getTarifa().name();
+                    "Numero: " + num + "  //  Titular: " + c.getTitular() + "//  Saldo: R$" + c.getSaldo() + "//  main.bancaria.gui.panels.Tarifa: " + c.getTarifa().name();
             model.addElement(dados);
         }
 

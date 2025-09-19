@@ -61,7 +61,7 @@ public class BtnsPanel extends JPanel {
         btnConfig(btnTranferir,"Transferencia");
         btnTranferir.addActionListener(this::btnTranferirMouseClicked);
 
-        btnConfig(btnOrdenar,"Ordenar");
+        btnConfig(btnOrdenar,"main.bancaria.gui.panels.Ordenar");
         btnOrdenar.addActionListener(this::btnOrdenarMouseClicked);
 
         btnConfig(btnDeletarConta,"Deletar conta");
@@ -70,7 +70,7 @@ public class BtnsPanel extends JPanel {
         btnConfig(btnListarContas,"Listar");
         btnListarContas.addActionListener(this::btnListarContasMouseClicked);
 
-        btnConfig(btnCalcularTarifa,"Calcular Tarifa");
+        btnConfig(btnCalcularTarifa,"Calcular main.bancaria.gui.panels.Tarifa");
         btnCalcularTarifa.addActionListener(this::btnCalcularTarifaMouseClicked);
 
         btns.add(btnFiltrarConta);

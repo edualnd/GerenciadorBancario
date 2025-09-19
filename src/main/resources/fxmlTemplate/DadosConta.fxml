@@ -39,7 +39,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label id="tarifaLbl" text="Tarifa: " GridPane.rowIndex="3">
+        <Label id="tarifaLbl" text="main.bancaria.gui.panels.Tarifa: " GridPane.rowIndex="3">
             <font>
                 <Font size="18.0" />
             </font>

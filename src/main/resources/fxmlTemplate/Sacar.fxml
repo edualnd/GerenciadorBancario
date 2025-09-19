@@ -27,5 +27,5 @@
         </Label>
         <TextField id="valorTxt" GridPane.columnIndex="1"/>
     </GridPane>
-    <Button layoutX="255.0" layoutY="112.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="90.0" text="Sacar"/>
+    <Button layoutX="255.0" layoutY="112.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="90.0" text="main.bancaria.gui.panels.Sacar"/>
 </Pane>

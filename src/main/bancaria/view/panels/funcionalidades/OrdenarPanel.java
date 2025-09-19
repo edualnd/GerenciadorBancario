@@ -25,7 +25,7 @@ public class OrdenarPanel extends JPanel{
 
     private void initComponents(){
         JLabel titulo = new JLabel();
-        titulo.setText("Ordenar contas");
+        titulo.setText("main.bancaria.gui.panels.Ordenar contas");
         titulo.setFont(new Font("Arial", Font.BOLD, 24));
 
         setPreferredSize(new Dimension(500,400));
@@ -42,7 +42,7 @@ public class OrdenarPanel extends JPanel{
         ordenarCmbBox.addItem("Por nome");
         ordenarCmbBox.addItem("Por saldo");
 
-        btnEnviar.setText("Ordenar");
+        btnEnviar.setText("main.bancaria.gui.panels.Ordenar");
         btnEnviar.addActionListener(e -> onClickBtnEnviar());
 
         JPanel inpContainer = new JPanel();

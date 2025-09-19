@@ -11,12 +11,12 @@
     <cursor>
         <Cursor fx:constant="DEFAULT" />
     </cursor>
-    <Label id="InicioTitle"styleClass="title" layoutX="171.0" layoutY="81.0" prefHeight="44.0" prefWidth="270.0" text="Gerenciamento Bancario">
+    <Label id="InicioTitle" styleClass="title" layoutX="171.0" layoutY="81.0" prefHeight="44.0" prefWidth="270.0" text="Gerenciamento Bancario">
         <font>
-          <Font size="23.0" />
+            <Font size="23.0" />
         </font>
     </Label>
-    <Button fx:id="operacoesBtn" styleClass="inicioBtn"layoutX="226.0" layoutY="159.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" text="Operações bancarias">
+    <Button fx:id="operacoesBtn" styleClass="inicioBtn" layoutX="226.0" layoutY="159.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" text="Operações bancarias">
         <font>
             <Font size="14.0" />
         </font>

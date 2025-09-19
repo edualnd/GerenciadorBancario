@@ -19,7 +19,7 @@ public class SaquePanel extends JPanel{
     private final NumberFormat format = NumberFormat.getInstance();
     private final JFormattedTextField valor = new JFormattedTextField(format);
     private final JLabel saldoAtual = new JLabel("");
-    private final JButton btnEnviar = new JButton("Sacar");
+    private final JButton btnEnviar = new JButton("main.bancaria.gui.panels.Sacar");
 
     public SaquePanel(List<ContaCorrente> dados) {
         this.dados = dados;
@@ -42,7 +42,7 @@ public class SaquePanel extends JPanel{
         containerValor.add(valor);
 
         JLabel titulo = new JLabel();
-        titulo.setText("Sacar");
+        titulo.setText("main.bancaria.gui.panels.Sacar");
         titulo.setFont(new Font("Arial", Font.BOLD, 24));
 
         setPreferredSize(new Dimension(500,400));
