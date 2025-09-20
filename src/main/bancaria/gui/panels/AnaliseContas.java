@@ -1,15 +1,23 @@
 package main.bancaria.gui.panels;
 
+import main.bancaria.gui.BtnStrategy;
+import main.bancaria.model.ContaCorrente;
+import main.bancaria.view.panels.funcionalidades.FaixaPanel;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class AnaliseContas extends JPanel {
     private JTable tableAnalise;
     private JButton filtrarBtn, saldoTotalBtn, faixaSaldoBtn, ordenarBtn;
     private JPanel panel;
+    private JButton sairBtn;
     
     public AnaliseContas() {
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 10, 5, 10);
         setLayout(new GridBagLayout());
         setPreferredSize(new Dimension(600, 400));
         setBackground(new Color(248, 102, 36));
@@ -17,6 +25,23 @@ public class AnaliseContas extends JPanel {
         JLabel title = new JLabel("Analisar contas");
         title.setFont(new Font("Arial", Font.BOLD, 23));
         title.setForeground(Color.WHITE);
+
+        sairBtn = new JButton("X");
+        sairBtn.setFont(new Font("Arial", Font.BOLD, 12));
+        sairBtn.setForeground(Color.WHITE);
+        sairBtn.setPreferredSize(new Dimension(40, 30));
+        sairBtn.setOpaque(false);
+        sairBtn.setBackground(new Color(0, 0, 0, 0));
+        sairBtn.setBorder(null);
+        sairBtn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.NORTHWEST; // Canto superior esquerdo
+        gbc.weightx = 1.0;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.NONE;
+        add(sairBtn, gbc);
 
         String[] colunas = {"Numero", "Titular", "Saldo"};
         DefaultTableModel model = new DefaultTableModel(colunas, 0);
@@ -32,7 +57,6 @@ public class AnaliseContas extends JPanel {
         faixaSaldoBtn = configBotao("Faixa de Saldo");
         ordenarBtn = configBotao("Ordenar");
 
-        GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 10, 5, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.weightx = 1.0;
@@ -75,12 +99,29 @@ public class AnaliseContas extends JPanel {
 
         gbc.gridx = 3;
         add(ordenarBtn, gbc);
-        
-        configActionBtn(filtrarBtn);
-        configActionBtn(saldoTotalBtn);
-        configActionBtn(faixaSaldoBtn);
-        configActionBtn(ordenarBtn);
 
+        sairBtn.addActionListener(e -> {
+            Container pai = getParent();
+            if (pai != null) {
+                Container avo = pai.getParent();
+                pai.remove(this);
+                pai.add(new Inicio());
+                pai.revalidate();
+                pai.repaint();
+
+            }
+        });
+
+    }
+    private JButton configBotao(String text) {
+        JButton btn = new JButton(text);
+        btn.setBackground(Color.WHITE);
+        btn.setForeground(new Color(248, 102, 36));
+        btn.setFont(new Font("Arial", Font.BOLD, 14));
+        text = text.replace(" ", "");
+        btn.setName(text);
+        configActionBtn(btn);
+        return btn;
     }
 
     private void configActionBtn(JButton btn) {
@@ -88,20 +129,14 @@ public class AnaliseContas extends JPanel {
     }
 
     private void mudarPanel(String name) {
+        BtnStrategy strategy = BtnStrategy.valueOf(name);
         panel.removeAll();
-        panel.add(new Filtrar());
+        panel.add(strategy.mudarPanel());
         repaint();
         revalidate();
     }
 
-    private JButton configBotao(String text) {
-        JButton button = new JButton(text);
-        button.setBackground(Color.WHITE);
-        button.setForeground(new Color(248, 102, 36));
-        button.setFont(new Font("Arial", Font.BOLD, 14));
-        button.setName(text);
-        return button;
-    }
+
     
     public JTable getTable() {
         return tableAnalise;

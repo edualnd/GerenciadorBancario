@@ -3,19 +3,19 @@ package main.bancaria.gui.panels;
 import javax.swing.*;
 import java.awt.*;
 
-public class Filtrar extends JPanel {
+public class FaixaSaldo extends JPanel {
     private ButtonGroup filterGroup;
     private JRadioButton saldoMaior10k, contasPares, saldoMaior5k;
 
-    public Filtrar() {
+    public FaixaSaldo() {
         setPreferredSize(new Dimension(600, 100));
         setOpaque(false);
 
         filterGroup = new ButtonGroup();
 
-        saldoMaior10k = configBtn("Saldo > 10000");
-        contasPares = configBtn("Contas pares");
-        saldoMaior5k = configBtn("Saldo > 5000");
+        saldoMaior10k = configBtn("Até 5000");
+        contasPares = configBtn("de 5001 a 10000");
+        saldoMaior5k = configBtn("Acima de 10000");
 
         saldoMaior10k.setSelected(true);
 

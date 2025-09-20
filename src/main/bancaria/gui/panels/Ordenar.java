@@ -10,23 +10,25 @@ public class Ordenar extends JPanel {
     private JRadioButton porNome, porSaldo;
     
     public Ordenar() {
-        setLayout(null);
-        setPreferredSize(new Dimension(600, 110));
+        setPreferredSize(new Dimension(600, 100));
+        setOpaque(false);
         
         orderGroup = new ButtonGroup();
         
-        porNome = createRadioButton("Por nome", 221, 43);
-        porSaldo = createRadioButton("Por saldo", 331, 43);
+        porNome = configBtn("Por nome");
+        porSaldo = configBtn("Por saldo");
         
         porNome.setSelected(true);
+
+        add(porNome);
+        add(porSaldo);
     }
     
-    private JRadioButton createRadioButton(String text, int x, int y) {
+    private JRadioButton configBtn(String text) {
         JRadioButton radio = new JRadioButton(text);
         radio.setFont(new Font("Arial", Font.BOLD, 12));
-        radio.setBounds(x, y, 100, 30);
+        radio.setOpaque(false);
         orderGroup.add(radio);
-        add(radio);
         return radio;
     }
     

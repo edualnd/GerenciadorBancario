@@ -1,5 +1,7 @@
 package main.bancaria.gui.panels;
 
+import main.bancaria.gui.BtnStrategy;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,9 +17,9 @@ public class Inicio extends JPanel {
         title.setFont(new Font("Arial", Font.BOLD, 23));
         title.setForeground(Color.WHITE);
 
-
         operacoesBtn = configBotao("Operações bancarias");
         analisarBtn = configBotao("Analisar contas");
+
 
         operacoesBtn.setBounds(226, 159, 160, 36);
         analisarBtn.setBounds(226, 200, 160, 36);
@@ -36,15 +38,27 @@ public class Inicio extends JPanel {
     }
     
     private JButton configBotao(String text) {
-        JButton button = new JButton(text);
-        button.setBackground(new Color(209, 87, 31));
-        button.setForeground(Color.WHITE);
-        button.setFont(new Font("Arial", Font.BOLD, 14));
-        button.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
-        button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        return button;
+        JButton btn = new JButton(text);
+        btn.setBackground(new Color(209, 87, 31));
+        btn.setForeground(Color.WHITE);
+        btn.setFont(new Font("Arial", Font.BOLD, 14));
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btn.setBorder(null);
+        btn.setPreferredSize(new Dimension(100, 30));
+        text = text.replace(" ","");
+        btn.setName(text);
+        btn.addActionListener(e -> mudarPagina(btn.getName()));
+        return btn;
     }
-    
+
+    private void mudarPagina(String name) {
+        BtnStrategy strategy = BtnStrategy.valueOf(name);
+        removeAll();
+        add(strategy.mudarPanel());
+        repaint();
+        revalidate();
+    }
+
     public JButton getOperacoesBtn() { return operacoesBtn; }
     public JButton getAnalisarBtn() { return analisarBtn; }
 }

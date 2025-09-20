@@ -57,5 +57,10 @@ public class ContaService {
         return dao.remover(num);
 
     }
+    public ContaCorrente selecionarConta(int num){
+        ContaDAO dao = new ContaDAO();
+        return (ContaCorrente) dao.buscarPorNumero(num);
+
+    }
 
 }
